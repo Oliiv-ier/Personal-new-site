@@ -1,0 +1,159 @@
+<!-- components/contact-form.html - Formulaire de contact réutilisable -->
+<div class="contact-form">
+    <h3>Formulaire de contact</h3>
+    <p>Pour toute question ou demande d'information, n'hésitez pas à me contacter via ce formulaire. Je vous répondrai dans les meilleurs délais.</p>
+    
+    <!-- En WordPress, remplacez cette div par votre shortcode, par exemple : [wpforms id="123"] -->
+    <div class="wpform-placeholder">
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Nom complet *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group form-consent">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">J'accepte que mes données soient traitées dans le cadre de ma demande de contact *</label>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="btn-submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Script pour la validation du formulaire
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Vérification des champs requis
+                const nameInput = this.querySelector('input[name="name"]');
+                const emailInput = this.querySelector('input[name="email"]');
+                const messageInput = this.querySelector('textarea[name="message"]');
+                const consentInput = this.querySelector('input[name="consent"]');
+                
+                let isValid = true;
+                
+                // Réinitialiser les erreurs
+                const errorMessages = this.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.remove());
+                
+                // Validation du nom
+                if (!nameInput.value.trim()) {
+                    showError(nameInput, 'Veuillez entrer votre nom');
+                    isValid = false;
+                }
+                
+                // Validation de l'email
+                if (!emailInput.value.trim()) {
+                    showError(emailInput, 'Veuillez entrer votre email');
+                    isValid = false;
+                } else if (!isValidEmail(emailInput.value)) {
+                    showError(emailInput, 'Veuillez entrer un email valide');
+                    isValid = false;
+                }
+                
+                // Validation du message
+                if (!messageInput.value.trim()) {
+                    showError(messageInput, 'Veuillez entrer votre message');
+                    isValid = false;
+                }
+                
+                // Validation du consentement
+                if (!consentInput.checked) {
+                    showError(consentInput, 'Veuillez accepter le traitement de vos données');
+                    isValid = false;
+                }
+                
+                // Si le formulaire est valide
+                if (isValid) {
+                    // Simulation d'envoi (à remplacer par l'envoi réel)
+                    const submitBtn = this.querySelector('.btn-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Envoi en cours...';
+                    submitBtn.disabled = true;
+                    
+                    // Simuler un délai d'envoi
+                    setTimeout(() => {
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.textContent = 'Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.';
+                        successMessage.style.color = 'var(--vert-fonce)';
+                        successMessage.style.padding = '1rem';
+                        successMessage.style.backgroundColor = 'rgba(58, 114, 89, 0.1)';
+                        successMessage.style.borderRadius = '5px';
+                        successMessage.style.marginTop = '1rem';
+                        
+                        this.appendChild(successMessage);
+                        this.reset();
+                        
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Faire disparaître le message après 5 secondes
+                        setTimeout(() => {
+                            successMessage.style.opacity = '0';
+                            successMessage.style.transition = 'opacity 0.5s ease';
+                            
+                            setTimeout(() => {
+                                successMessage.remove();
+                            }, 500);
+                        }, 5000);
+                    }, 1500);
+                }
+            });
+        }
+        
+        // Fonction pour afficher une erreur
+        function showError(input, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = 'red';
+            errorDiv.style.fontSize = '0.9rem';
+            errorDiv.style.marginTop = '0.25rem';
+            
+            const parentElement = input.parentElement;
+            parentElement.appendChild(errorDiv);
+            
+            input.style.borderColor = 'red';
+            
+            // Réinitialiser le style après la correction
+            input.addEventListener('input', function() {
+                this.style.borderColor = '';
+                const error = parentElement.querySelector('.error-message');
+                if (error) {
+                    error.remove();
+                }
+            });
+        }
+        
+        // Fonction pour valider un email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    });
+</script>

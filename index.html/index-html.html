@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentin HENRY, Ostéopathe D.O. à Grenoble - Approche holistique combinant ostéopathie, désensibilisation émotionnelle et étude du microbiote.">
+    <title>Valentin HENRY - Ostéopathe D.O. à Grenoble</title>
+    
+    <!-- Favicon (à remplacer par votre propre favicon) -->
+    <link rel="icon" href="img/common/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <!-- Le contenu de components/header.html sera inclus ici -->
+    <header id="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">VH</div>
+                <div class="title-container">
+                    <h1>Valentin HENRY</h1>
+                    <p>Ostéopathe D.O.</p>
+                </div>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#soins">Soins</a></li>
+                    <li><a href="#rdv">Prise de RDV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#infos">Infos</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Menu mobile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            
+            <nav class="mobile-nav" id="mobile-menu">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#soins">Soins</a></li>
+                    <li><a href="#rdv">Prise de RDV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#infos">Infos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Héro / Accueil -->
+        <section class="hero-section" id="accueil">
+            <div class="hero-container">
+                <div class="hero-image">
+                    <!-- Remplacer par votre image -->
+                    <img src="img/backgrounds/hero-image.jpg" alt="Ostéopathie bien-être">
+                </div>
+                <div class="hero-content">
+                    <h1>Vers un équilibre qui vous va mieux</h1>
+                    <p class="hero-subtitle">Le corps, L'émotion,<br>Le microbiote</p>
+                    <a href="#rdv" class="btn-rdv">
+                        <span class="rdv-icon">📅</span>
+                        <span class="rdv-text">Prendre rendez-vous</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À Propos -->
+        <section class="about-section" id="a-propos">
+            <div class="section-header">
+                <h2>À propos</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Valentin HENRY, Ostéopathe D.O.</h3>
+                        <p>Passionné par le corps humain et ses interactions complexes, mon parcours m'a naturellement mené vers une approche holistique de la santé. Diplômé en ostéopathie, j'ai enrichi ma pratique par des études approfondies en anatomie ainsi que des formations en ostéopathie, en émotionnel et en santé intégrative.</p>
+                        
+                        <p>Ma curiosité m'a poussé à explorer différents horizons, tant géographiques qu'intellectuels. Ces voyages et rencontres ont nourri ma vision de la santé, me permettant aujourd'hui d'offrir une prise en charge complète qui intègre :</p>
+                        
+                        <ul>
+                            <li>L'approche structurelle, fonctionnelle et biodynamique en ostéopathie</li>
+                            <li>La désensibilisation émotionnelle pour accompagner les chocs et les changements de vie</li>
+                            <li>L'étude du microbiote et son impact sur notre équilibre global</li>
+                        </ul>
+                        
+                        <p>Je crois profondément que notre santé repose sur l'équilibre entre le corps, les émotions et notre environnement. C'est pourquoi j'accorde une importance particulière à comprendre chaque patient dans sa globalité, en prenant le temps d'écouter son histoire et ses besoins spécifiques.</p>
+                        
+                        <div class="about-button-container">
+                            <a href="#rdv" class="btn-rdv about-btn">
+                                <span class="rdv-icon">📅</span>
+                                <span class="rdv-text">Prendre rendez-vous</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Remplacer par votre image -->
+                    <img src="img/common/valentin-henry.jpg" alt="Valentin HENRY Ostéopathe">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Soins -->
+        <section class="soins-section" id="soins">
+            <div class="section-header">
+                <h2>Soins</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="soins-container">
+                <!-- Carte Ostéopathie -->
+                <div class="soin-card animate-on-scroll" onclick="location.href='#osteopathie-details';">
+                    <div class="soin-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                            <path d="M12 18v4"></path>
+                            <path d="M8 18h8"></path>
+                        </svg>
+                    </div>
+                    <h3>Ostéopathie</h3>
+                    <p>Traitement des douleurs articulaires, musculaires, rééquilibration posturale, soulagement des pathologies chroniques.</p>
+                    <div class="soin-plus">
+                        <span>En savoir plus</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Carte Désensibilisation émotionnelle -->
+                <div class="soin-card animate-on-scroll" onclick="location.href='#emotionnel-details';">
+                    <div class="soin-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"></path>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <path d="M9 9h.01"></path>
+                            <path d="M15 9h.01"></path>
+                        </svg>
+                    </div>
+                    <h3>Désensibilisation émotionnelle</h3>
+                    <p>Accompagnement pour la gestion du stress, de la fatigue chronique et des émotions. Techniques d'équilibrage pour les chocs, les traumatismes et les changements de vie. Aide à la prise de recul.</p>
+                    <div class="soin-plus">
+                        <span>En savoir plus</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Carte Microbiote -->
+                <div class="soin-card animate-on-scroll" onclick="location.href='#microbiote-details';">
+                    <div class="soin-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 2a26.6 26.6 0 0 1 10 20c.9-6.82 1.5-10.2 3-13.5C16.5 5 19 5 22 5"></path>
+                            <path d="M9 20c-1.1-1.97-1.5-3.23-1.5-5-2 .4-3.5.4-5.5-1"></path>
+                        </svg>
+                    </div>
+                    <h3>Étude du microbiote et conseils sur l'alimentation</h3>
+                    <p>Étude du microbiote intestinal et conseils sur l'alimentation pour un équilibre métabolique. Comprendre le lien entre votre alimentation, votre environnement, vos émotions et votre état de santé physique et mentale.</p>
+                    <div class="soin-plus">
+                        <span>En savoir plus</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pages détaillées des soins -->
+        <!-- Ces sections sont masquées par défaut et affichées via JavaScript lors du clic -->
+        <!-- Inclure le contenu des pages/soins.html -->
+
+        <!-- Section Prise de Rendez-vous -->
+        <section class="rdv-section" id="rdv">
+            <div class="section-header">
+                <h2>Prendre rendez-vous</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="central-contact">
+                <div class="phone-contact">
+                    <div class="phone-contact-inner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:0607101950" style="text-decoration: none; color: inherit;"><span>Par téléphone au 06.07.10.19.50</span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rdv-container">
+                <!-- Cabinet de Grenoble -->
+                <div class="location-card">
+                    <h3>Cabinet de Grenoble</h3>
+                    <div class="location-image">
+                        <img src="img/common/cabinet-grenoble.jpg" alt="Cabinet de Grenoble">
+                    </div>
+                    <div class="location-info">
+                        <p><strong>Adresse :</strong> 2 Place d'Apvril, 38000 Grenoble</p>
+                        <p><strong>Horaires :</strong> Lundi, Mardi, Vendredi de 8h à 20h et Samedi de 8h à 15h</p>
+                    </div>
+                    <div class="location-button-container">
+                        <a href="https://www.doctolib.fr/osteopathe/grenoble/valentin-henry?pid=practice-664862" target="_blank" class="btn-rdv" id="grenoble-booking">
+                            <span class="rdv-text">Prendre rendez-vous en ligne</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Ostéo'Van -->
+                <div class="location-card">
+                    <h3>Ostéo'Van</h3>
+                    <div class="location-image">
+                        <img src="img/common/osteo-van.jpg" alt="Ostéo'Van">
+                    </div>
+                    <div class="location-info">
+                        <p><strong>Zones desservies :</strong> Trièves et Matheysine</p>
+                        <p><strong>Villages :</strong> Mens, Valbonnais, La Motte Saint Martin, La Morte, Chichilianne, Lalley, Sinard</p>
+                    </div>
+                    <div class="location-button-container">
+                        <a href="#osteo-van-planning" class="btn-rdv" id="osteo-van-booking">
+                            <span class="rdv-text">Voir les lieux et dates</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rdv-notes-container">
+                <!-- Encart d'informations pour le Cabinet de Grenoble -->
+                <div class="rdv-notes">
+                    <h4>Informations importantes - Cabinet de Grenoble</h4>
+                    <ul>
+                        <li>Durée des séances : 
+                            <ul>
+                                <li>Ostéopathie et étude du microbiote : environ 1h</li>
+                                <li>Désensibilisation émotionnelle : environ 1h30</li>
+                            </ul>
+                        </li>
+                        <li>En cas d'empêchement, merci de prévenir au moins 24h à l'avance</li>
+                        <li>Tarifs :
+                            <ul>
+                                <li>Consultation ostéopathique et émotionnelle : 65€</li>
+                                <li>Etude et suivi microbiote : 80€</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Encart d'informations pour l'Ostéo'Van -->
+                <div class="rdv-notes">
+                    <h4>Informations importantes - Ostéo'Van</h4>
+                    <ul>
+                        <li>Durée des séances : 
+                            <ul>
+                                <li>Ostéopathie : environ 50 min</li>
+                                <li>Etude du microbiote : environ 1h</li>
+                                <li>Désensibilisation émotionnelle : environ 1h30</li>
+                            </ul>
+                        </li>
+                        <li>En cas d'empêchement, merci de prévenir au moins 24h à l'avance</li>
+                        <li>Tarifs :
+                            <ul>
+                                <li>Consultation ostéopathique et émotionnelle : 60€</li>
+                                <li>Etude microbiote et conseils alimentaires : 75€</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="contact-section" id="contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info-container">
+                    <div class="contact-info">
+                        <h3>Informations de contact</h3>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+33607101950">06.07.10.19.50</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:henry.osteopathe@laposte.net">henry.osteopathe@laposte.net</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Adresse</h4>
+                                <p>2 Place d'Apvril<br>38000 Grenoble</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Horaires</h4>
+                                <p>Lundi, Mardi, Vendredi : 8h - 20h<br>Samedi : 8h - 15h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <h3>Localisation du cabinet</h3>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2811.790107475726!2d5.7208346!3d45.1925362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af482664f81d3%3A0xb0ff5f7adac8d407!2s2%20Pl.%20d&#39;Apvril%2C%2038000%20Grenoble!5e0!3m2!1sfr!2sfr!4v1708985682462!5m2!1sfr!2sfr" 
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map-link">
+                            <a href="https://www.google.fr/maps/place/Valentin+Henry+-+Ost%C3%A9opathe/@45.1863784,5.7266671,17z/data=!3m1!4b1!4m6!3m5!1s0x478af50067b6b7eb:0xaab99b9ba95b25db!8m2!3d45.1863746!4d5.7292474!16s%2Fg%2F11m5qjknh7?entry=ttu&g_ep=EgoyMDI1MDIyNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank" class="btn-map">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Voir sur Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <!-- Inclure le formulaire de contact -->
+                    <div class="contact-form">
+                        <h3>Formulaire de contact</h3>
+                        <p>Pour toute question ou demande d'information, n'hésitez pas à me contacter via ce formulaire. Je vous répondrai dans les meilleurs délais.</p>
+                        
+                        <!-- En WordPress, remplacez cette div par votre shortcode, par exemple : [wpforms id="123"] -->
+                        <div class="wpform-placeholder">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Nom complet *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <div class="form-group form-consent">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <label for="consent">J'accepte que mes données soient traitées dans le cadre de ma demande de contact *</label>
+                                </div>
+                                
+                                <div class="form-submit">
+                                    <button type="submit" class="btn-submit">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Infos -->
+        <section class="infos-section" id="infos">
+            <div class="section-header">
+                <h2>Informations</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="infos-container">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <h3>En construction</h3>
+                    <p>Cette page est en cours de développement. Vous y trouverez prochainement des informations utiles concernant l'ostéopathie, les soins proposés, et des conseils pour votre bien-être.</p>
+                    <p>N'hésitez pas à consulter les autres sections du site pour découvrir mes services ou me contacter directement pour toute question.</p>
+                    
+                    <div class="info-actions">
+                        <a href="#rdv" class="btn-primary">Prendre rendez-vous</a>
+                        <a href="#contact" class="btn-secondary">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <!-- Le contenu de components/footer.html sera inclus ici -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <div class="logo">VH</div>
+                        <div class="title-container">
+                            <h3>Valentin HENRY</h3>
+                            <p>Ostéopathe D.O.</p>
+                        </div>
+                    </div>
+                    <p class="footer-address">2 Place d'Apvril, 38000 Grenoble</p>
+                    <p class="footer-phone">06.07.10.19.50</p>
+                    <p class="footer-email">henry.osteopathe@laposte.net</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#soins">Soins</a></li>
+                        <li><a href="#rdv">Prise de RDV</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#infos">Infos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Horaires</h4>
+                    <ul>
+                        <li><span>Lundi :</span> 8h - 20h</li>
+                        <li><span>Mardi :</span> 8h - 20h</li>
+                        <li><span>Mercredi :</span> Fermé</li>
+                        <li><span>Jeudi :</span> Fermé</li>
+                        <li><span>Vendredi :</span> 8h - 20h</li>
+                        <li><span>Samedi :</span> 8h - 15h</li>
+                        <li><span>Dimanche :</span> Fermé</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valentin HENRY - Ostéopathe D.O. Tous droits réservés.</p>
+                <p>
+                    <a href="#" class="footer-link">Mentions légales</a> | 
+                    <a href="#" class="footer-link">Politique de confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pages de détails des soins (masquées par défaut) -->
+    <!-- Page Ostéopathie -->
+    <section class="soin-details" id="osteopathie-details">
+        <div class="details-container">
+            <div class="details-header">
+                <button class="back-button" onclick="location.href='#soins';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    Retour
+                </button>
+                <h2>Ostéopathie</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="details-content">
+                <div class="details-text">
+                    <h3>Une approche globale du corps</h3>
+                    <p>L'ostéopathie est une médecine manuelle qui vise à restaurer l'équilibre du corps. En tant qu'ostéopathe, j'utilise différentes techniques adaptées à chaque patient :</p>
+                    
+                    <ul>
+                        <li><strong>Approche structurelle :</strong> Travail sur les articulations, les muscles et les fasciae pour libérer les tensions et restaurer la mobilité.</li>
+                        <li><strong>Approche fonctionnelle :</strong> Techniques douces pour harmoniser les fonctions du corps et optimiser le mouvement de chaque partie en son sein et avec le reste du corps.</li>
+                        <li><strong>Approche biodynamique :</strong> Accompagnement subtil des forces d'auto-guérison du corps, respectant son rythme naturel.</li>
+                    </ul>
+                    
+                    <p>Chaque séance est personnalisée selon vos besoins spécifiques. Je prends en charge aussi bien les douleurs aiguës que chroniques, et propose un suivi adapté pour maintenir les bienfaits sur le long terme.</p>
+                    
+                    <h3>Quand consulter ?</h3>
+                    <p>L'ostéopathie peut être indiquée dans de nombreuses situations :</p>
+                    <ul>
+                        <li>Douleurs cervicales, dorsales, lombaires</li>
+                        <li>Troubles musculo-squelettiques et articulaires</li>
+                        <li>Déséquilibres posturaux</li>
+                        <li>Troubles digestifs, fonctionnels et hormonaux</li>
+                        <li>Suivi périnatal</li>
+                        <li>Accompagnement des sportifs</li>
+                        <li>Prévention et maintien de la santé</li>
+                    </ul>
+                    
+                    <div class="details-button-container">
+                        <a href="#rdv" class="btn-rdv details-btn">
+                            <span class="rdv-icon">📅</span>
+                            <span class="rdv-text">Prendre rendez-vous</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="details-image">
+                    <img src="img/soins/osteopathie.jpg" alt="Séance d'ostéopathie">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Désensibilisation émotionnelle -->
+    <section class="soin-details" id="emotionnel-details">
+        <div class="details-container">
+            <div class="details-header">
+                <button class="back-button" onclick="location.href='#soins';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    Retour
+                </button>
+                <h2>Désensibilisation émotionnelle</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="details-content">
+                <div class="details-text">
+                    <h3>Équilibrer les émotions pour un mieux-être</h3>
+                    <p>La désensibilisation émotionnelle est une approche thérapeutique qui aide à libérer les charges émotionnelles bloquées dans le corps. Ces techniques permettent d'accompagner efficacement :</p>
+                    
+                    <ul>
+                        <li><strong>Le stress et l'anxiété :</strong> Retrouver un état de calme et de sérénité face aux défis du quotidien.</li>
+                        <li><strong>La fatigue chronique :</strong> Identifier et libérer les charges émotionnelles qui vous épuise.</li>
+                        <li><strong>Les chocs émotionnels :</strong> Accompagner la résolution des traumatismes et des expériences difficiles.</li>
+                        <li><strong>Les transitions de vie :</strong> Faciliter l'adaptation aux changements importants (déménagement, changement professionnel, personnel, etc.).</li>
+                        <li><strong>L'accompagnement de fin de vie :</strong> Accompagner un proche ou vivre ce moment particulier est primordial pour dire au revoir ou partir, dans la sérénité.</li>
+                    </ul>
+                    
+                    <p>Je vous guide dans un processus de libération émotionnelle qui respecte votre rythme et vos besoins. L'objectif est de vous donner des outils pour mieux comprendre vos réactions et développer une plus grande résilience face aux défis de la vie.</p>
+                    
+                    <h3>Une approche sur mesure</h3>
+                    <p>Chaque séance est unique et personnalisée. Je m'adapte à vos besoins spécifiques en intégrant différentes techniques de désensibilisation émotionnelle, toujours dans un temps qui est le vôtre.</p>
+                    
+                    <div class="details-button-container">
+                        <a href="#rdv" class="btn-rdv details-btn">
+                            <span class="rdv-icon">📅</span>
+                            <span class="rdv-text">Prendre rendez-vous</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="details-image">
+                    <img src="img/soins/emotionnel.jpg" alt="Accompagnement émotionnel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Microbiote -->
+    <section class="soin-details" id="microbiote-details">
+        <div class="details-container">
+            <div class="details-header">
+                <button class="back-button" onclick="location.href='#soins';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    Retour
+                </button>
+                <h2>Étude du microbiote et conseils sur l'alimentation</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="details-content">
+                <div class="details-text">
+                    <h3>Comprendre l'impact du microbiote sur votre santé</h3>
+                    <p>Le microbiote intestinal joue un rôle fondamental dans notre équilibre global. En analysant votre microbiote et en comprenant votre métabolisme, je peux vous aider à :</p>
+                    
+                    <ul>
+                        <li><strong>Optimiser votre digestion :</strong> Identifier les aliments qui vous conviennent et ceux qui perturbent votre équilibre intestinal.</li>
+                        <li><strong>Renforcer votre immunité :</strong> Un microbiote équilibré est essentiel pour un système immunitaire performant.</li>
+                        <li><strong>Améliorer votre énergie :</strong> Comprendre les liens entre alimentation et vitalité pour retrouver tonus et dynamisme.</li>
+                        <li><strong>Équilibrer votre humeur :</strong> Explorer l'axe intestin-cerveau et son influence sur votre bien-être émotionnel.</li>
+                    </ul>
+                    
+                    <p>Cette approche s'intègre parfaitement dans une vision holistique de la santé, où l'équilibre intérieur influence directement notre état physique et mental.</p>
+                    
+                    <h3>Un accompagnement personnalisé</h3>
+                    <p>Je vous propose une analyse de votre microbiote et de vos habitudes alimentaires, suivie de recommandations adaptées à votre situation. La prise de certaines mesures permettent de suivre votre évolution et de vous accompagner sur le long terme. L'objectif n'est pas d'imposer un régime strict, mais de vous aider à développer une relation harmonieuse avec votre alimentation, en conscience de ses effets sur votre corps et votre esprit.</p>
+                    
+                    <div class="details-button-container">
+                        <a href="#rdv" class="btn-rdv details-btn">
+                            <span class="rdv-icon">📅</span>
+                            <span class="rdv-text">Prendre rendez-vous</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="details-image">
+                    <img src="img/soins/microbiote.jpg" alt="Équilibre alimentaire et microbiote">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Planning Ostéo'Van -->
+    <section class="osteo-van-planning" id="osteo-van-planning">
+        <div class="details-container">
+            <div class="details-header">
+                <button class="back-button" onclick="location.href='#rdv';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    Retour
+                </button>
+                <h2>Planning de l'Ostéo'Van</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <!-- Contenu de la page planning -->
+            <!-- Ce contenu est masqué par défaut et affiché via JavaScript -->
+        </section>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

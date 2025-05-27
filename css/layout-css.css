@@ -1,0 +1,307 @@
+/* layout.css - Styles de mise en page */
+
+/* Import des variables */
+@import url('variables.css');
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: var(--font-primary), sans-serif;
+    color: var(--texte-fonce);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: rgba(245, 240, 230, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 1rem 5%;
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--vert-fonce);
+    transition: transform 0.4s ease-in-out;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--vert-fonce);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.title-container h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vert-fonce);
+}
+
+.title-container p {
+    font-size: 1rem;
+    color: var(--texte-fonce);
+}
+
+nav.desktop-nav {
+    display: flex;
+}
+
+nav.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texte-fonce);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--vert-fonce);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--vert-fonce);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.active {
+    color: var(--vert-fonce);
+    font-weight: 600;
+}
+
+.active::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--vert-fonce);
+}
+
+nav.mobile-nav {
+    display: none;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    padding-top: 80px; /* Espace pour l'en-tête fixe */
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background-color: var(--fond-clair);
+    overflow: hidden;
+}
+
+.about-section {
+    background-color: var(--beige-clair);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.soins-section {
+    background-color: var(--vert-fonce);
+    min-height: 100vh;
+}
+
+.soins-section .section-header h2 {
+    color: white;
+}
+
+.soins-section .separator {
+    background-color: var(--beige-fonce);
+}
+
+.rdv-section {
+    background-color: var(--beige-clair);
+    min-height: 80vh;
+}
+
+.contact-section {
+    background-color: var(--beige-clair);
+    min-height: 100vh;
+}
+
+.infos-section {
+    background-color: var(--vert-printemps);
+    min-height: 100vh;
+    position: relative;
+}
+
+.infos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(120deg, rgba(44, 85, 69, 0.02) 0%, rgba(184, 226, 184, 0.08) 100%);
+    z-index: -1;
+}
+
+/* ===== CONTAINERS ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 20px;
+}
+
+.about-container,
+.soins-container,
+.rdv-container,
+.contact-container,
+.infos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== DETAILS PAGES ===== */
+.soin-details {
+    display: none;
+    padding: 80px 20px;
+    background-color: var(--beige-clair);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.soin-details:target {
+    display: block;
+}
+
+.soin-details:target ~ .soins-section {
+    display: none;
+}
+
+.details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.details-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.details-content {
+    display: flex;
+    gap: 50px;
+}
+
+.details-text {
+    flex: 1;
+}
+
+.details-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+/* ===== APPOINTMENT PAGES ===== */
+.osteo-van-planning,
+.amelia-booking {
+    display: none;
+    padding: 80px 20px;
+    background-color: var(--beige-clair);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.osteo-van-planning:target,
+.amelia-booking:target {
+    display: block;
+}
+
+.osteo-van-planning:target ~ .rdv-section,
+.amelia-booking:target ~ .rdv-section {
+    display: none;
+}

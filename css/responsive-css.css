@@ -1,0 +1,322 @@
+/* responsive.css - Styles pour l'adaptation mobile */
+
+/* Import des variables */
+@import url('variables.css');
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* 
+    - Large desktop: 1200px+
+    - Desktop: 992px - 1199px
+    - Tablet: 768px - 991px
+    - Mobile: 576px - 767px
+    - Small mobile: 575px and below
+*/
+
+/* ===== DESKTOP (< 1200px) ===== */
+@media screen and (max-width: 1200px) {
+    .container,
+    .hero-container,
+    .about-container,
+    .soins-container,
+    .rdv-container,
+    .contact-container,
+    .infos-container,
+    .details-container {
+        padding: 0 2rem;
+    }
+
+/* ===== SMALL MOBILE (< 576px) ===== */
+@media screen and (max-width: 576px) {
+    /* Sections */
+    .about-section,
+    .soins-section,
+    .rdv-section,
+    .contact-section,
+    .infos-section,
+    .soin-details,
+    .osteo-van-planning,
+    .amelia-booking {
+        padding: 40px 15px;
+    }
+    
+    /* Headers */
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    /* Text sizes */
+    .about-text h3,
+    .contact-info h3,
+    .contact-map h3,
+    .contact-form h3,
+    .info-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .about-text p,
+    .about-text li,
+    .info-content h4,
+    .info-card p {
+        font-size: 1rem;
+    }
+    
+    /* Buttons */
+    .btn-rdv,
+    .btn-primary,
+    .btn-secondary,
+    .btn-map,
+    .btn-submit {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Calendar */
+    .calendar th, .calendar td {
+        padding: 5px;
+    }
+    
+    .calendar {
+        font-size: 0.8rem;
+    }
+    
+    .event-indicator {
+        padding: 1px 2px;
+        font-size: 0.6rem;
+    }
+    
+    .tab-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .calendar-tab-buttons {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    /* Contact */
+    .form-group label {
+        font-size: 1rem;
+    }
+    
+    /* Cards */
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    .van-locations {
+        grid-template-columns: 1fr;
+    }
+}
+}
+
+/* ===== TABLET (< 992px) ===== */
+@media screen and (max-width: 992px) {
+    /* Navigation */
+    nav.desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    nav.mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--beige-clair);
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav.mobile-nav.active {
+        display: block;
+    }
+    
+    nav.mobile-nav ul {
+        list-style: none;
+    }
+    
+    nav.mobile-nav li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--beige-fonce);
+    }
+    
+    nav.mobile-nav li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Hero Section */
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-image, .hero-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .hero-image {
+        height: 50vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-section {
+        padding: 60px 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .about-image img {
+        max-height: 400px;
+    }
+    
+    /* Soins Section */
+    .soins-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .soin-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    /* Details Pages */
+    .details-content {
+        flex-direction: column-reverse;
+    }
+    
+    .details-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .details-image img {
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Contact Section */
+    .contact-info-container {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-map, .contact-form {
+        width: 100%;
+    }
+    
+    .contact-section {
+        padding: 60px 20px;
+    }
+    
+    /* RDV Section */
+    .rdv-container, .rdv-notes-container {
+        flex-direction: column;
+    }
+    
+    .location-card, .rdv-notes {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* Info Section */
+    .infos-section {
+        padding: 60px 20px;
+    }
+    
+    /* Calendar */
+    .van-locations {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* ===== MOBILE (< 768px) ===== */
+@media screen and (max-width: 768px) {
+    /* Sections */
+    section {
+        padding: 60px 15px;
+    }
+    
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Headers */
+    .section-header h2, .details-header h2 {
+        font-size: 2rem;
+    }
+    
+    /* Contact */
+    .phone-contact-inner span {
+        font-size: 1.3rem;
+    }
+    
+    /* Cards */
+    .location-card h3, .van-locations-container h3, .calendar-tabs-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .village-card {
+        padding: 1rem;
+    }
+    
+    .village-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    /* Calendar */
+    .calendar td {
+        height: 60px;
+        font-size: 0.9rem;
+    }
+    
+    .event-indicator {
+        font-size: 0.7rem;
+    }
+    
+    .calendar-tab-buttons {
+        flex-wrap: wrap;
+    }
+}

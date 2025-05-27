@@ -1,0 +1,337 @@
+<!-- components/booking-form.html - Formulaire de réservation -->
+<div class="booking-form-container">
+    <div class="booking-form-header">
+        <h3>Prendre rendez-vous</h3>
+        <p>Veuillez remplir le formulaire ci-dessous pour réserver votre créneau.</p>
+    </div>
+    
+    <div class="booking-form">
+        <!-- À remplacer par le shortcode de réservation -->
+        <form id="booking-form">
+            <div class="form-group">
+                <label for="booking-name">Nom complet *</label>
+                <input type="text" id="booking-name" name="booking-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-email">Email *</label>
+                <input type="email" id="booking-email" name="booking-email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-phone">Téléphone *</label>
+                <input type="tel" id="booking-phone" name="booking-phone" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group form-col">
+                    <label for="booking-date">Date souhaitée *</label>
+                    <input type="date" id="booking-date" name="booking-date" required>
+                </div>
+                
+                <div class="form-group form-col">
+                    <label for="booking-time">Heure souhaitée *</label>
+                    <select id="booking-time" name="booking-time" required>
+                        <option value="">Sélectionnez une heure</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-service">Type de soin *</label>
+                <select id="booking-service" name="booking-service" required>
+                    <option value="">Sélectionnez un type de soin</option>
+                    <option value="osteopathie">Ostéopathie</option>
+                    <option value="emotionnel">Désensibilisation émotionnelle</option>
+                    <option value="microbiote">Étude du microbiote</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="booking-notes">Notes ou préoccupations particulières</label>
+                <textarea id="booking-notes" name="booking-notes" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group form-consent">
+                <input type="checkbox" id="booking-consent" name="booking-consent" required>
+                <label for="booking-consent">J'accepte que mes données soient traitées dans le cadre de ma réservation *</label>
+            </div>
+            
+            <div class="form-submit">
+                <button type="submit" class="btn-primary">Confirmer la réservation</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .booking-form-container {
+        background-color: white;
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .booking-form-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .booking-form-header h3 {
+        font-size: 1.8rem;
+        color: var(--vert-moyen);
+        margin-bottom: 0.5rem;
+    }
+    
+    .booking-form-header p {
+        color: var(--texte-fonce);
+    }
+    
+    .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-col {
+        flex: 1;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .form-row {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const bookingForm = document.getElementById('booking-form');
+        
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Logique de validation similaire au formulaire de contact
+                const nameInput = this.querySelector('#booking-name');
+                const emailInput = this.querySelector('#booking-email');
+                const phoneInput = this.querySelector('#booking-phone');
+                const dateInput = this.querySelector('#booking-date');
+                const timeInput = this.querySelector('#booking-time');
+                const serviceInput = this.querySelector('#booking-service');
+                const consentInput = this.querySelector('#booking-consent');
+                
+                let isValid = true;
+                
+                // Réinitialiser les erreurs
+                const errorMessages = this.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.remove());
+                
+                // Validation du nom
+                if (!nameInput.value.trim()) {
+                    showError(nameInput, 'Veuillez entrer votre nom');
+                    isValid = false;
+                }
+                
+                // Validation de l'email
+                if (!emailInput.value.trim()) {
+                    showError(emailInput, 'Veuillez entrer votre email');
+                    isValid = false;
+                } else if (!isValidEmail(emailInput.value)) {
+                    showError(emailInput, 'Veuillez entrer un email valide');
+                    isValid = false;
+                }
+                
+                // Validation du téléphone
+                if (!phoneInput.value.trim()) {
+                    showError(phoneInput, 'Veuillez entrer votre numéro de téléphone');
+                    isValid = false;
+                }
+                
+                // Validation de la date
+                if (!dateInput.value) {
+                    showError(dateInput, 'Veuillez sélectionner une date');
+                    isValid = false;
+                } else {
+                    // Vérifier que la date n'est pas dans le passé
+                    const selectedDate = new Date(dateInput.value);
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0); // Reset hours to compare dates only
+                    
+                    if (selectedDate < today) {
+                        showError(dateInput, 'Veuillez sélectionner une date future');
+                        isValid = false;
+                    }
+                }
+                
+                // Validation de l'heure
+                if (!timeInput.value) {
+                    showError(timeInput, 'Veuillez sélectionner une heure');
+                    isValid = false;
+                }
+                
+                // Validation du service
+                if (!serviceInput.value) {
+                    showError(serviceInput, 'Veuillez sélectionner un type de soin');
+                    isValid = false;
+                }
+                
+                // Validation du consentement
+                if (!consentInput.checked) {
+                    showError(consentInput, 'Veuillez accepter le traitement de vos données');
+                    isValid = false;
+                }
+                
+                // Si le formulaire est valide
+                if (isValid) {
+                    // Simulation d'envoi (à remplacer par l'envoi réel)
+                    const submitBtn = this.querySelector('.btn-primary');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Traitement en cours...';
+                    submitBtn.disabled = true;
+                    
+                    // Simuler un délai d'envoi
+                    setTimeout(() => {
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.textContent = 'Votre demande de rendez-vous a été envoyée avec succès. Vous recevrez bientôt une confirmation par email.';
+                        successMessage.style.color = 'var(--vert-fonce)';
+                        successMessage.style.padding = '1rem';
+                        successMessage.style.backgroundColor = 'rgba(58, 114, 89, 0.1)';
+                        successMessage.style.borderRadius = '5px';
+                        successMessage.style.marginTop = '1rem';
+                        
+                        this.appendChild(successMessage);
+                        this.reset();
+                        
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Faire disparaître le message après 5 secondes
+                        setTimeout(() => {
+                            successMessage.style.opacity = '0';
+                            successMessage.style.transition = 'opacity 0.5s ease';
+                            
+                            setTimeout(() => {
+                                successMessage.remove();
+                            }, 500);
+                        }, 5000);
+                    }, 1500);
+                }
+            });
+        }
+    });
+</script>
+        }
+        
+        // Fonction pour afficher une erreur
+        function showError(input, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = 'red';
+            errorDiv.style.fontSize = '0.9rem';
+            errorDiv.style.marginTop = '0.25rem';
+            
+            const parentElement = input.parentElement;
+            parentElement.appendChild(errorDiv);
+            
+            input.style.borderColor = 'red';
+            
+            // Réinitialiser le style après la correction
+            input.addEventListener('input', function() {
+                this.style.borderColor = '';
+                const error = parentElement.querySelector('.error-message');
+                if (error) {
+                    error.remove();
+                }
+            });
+            
+            input.addEventListener('change', function() {
+                this.style.borderColor = '';
+                const error = parentElement.querySelector('.error-message');
+                if (error) {
+                    error.remove();
+                }
+            });
+        }
+        
+        // Fonction pour valider un email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Ajouter des contraintes pour la date (pas de week-end, pas de jours dans le passé)
+        const dateInput = document.getElementById('booking-date');
+        if (dateInput) {
+            // Définir la date minimale à aujourd'hui
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            dateInput.min = `${year}-${month}-${day}`;
+            
+            // Définir la date maximale à 3 mois à partir d'aujourd'hui
+            const maxDate = new Date();
+            maxDate.setMonth(maxDate.getMonth() + 3);
+            const maxYear = maxDate.getFullYear();
+            const maxMonth = String(maxDate.getMonth() + 1).padStart(2, '0');
+            const maxDay = String(maxDate.getDate()).padStart(2, '0');
+            dateInput.max = `${maxYear}-${maxMonth}-${maxDay}`;
+            
+            // Désactiver les week-ends
+            dateInput.addEventListener('input', function() {
+                const selectedDate = new Date(this.value);
+                const dayOfWeek = selectedDate.getDay(); // 0 = dimanche, 6 = samedi
+                
+                if (dayOfWeek === 0 || dayOfWeek === 6) {
+                    showError(this, 'Les rendez-vous ne sont pas disponibles le week-end');
+                    this.value = '';
+                }
+            });
+        }
+        
+        // Ajuster les horaires disponibles en fonction du type de soin
+        const serviceInput = document.getElementById('booking-service');
+        const timeInput = document.getElementById('booking-time');
+        
+        if (serviceInput && timeInput) {
+            serviceInput.addEventListener('change', function() {
+                // Réinitialiser les options
+                timeInput.innerHTML = '<option value="">Sélectionnez une heure</option>';
+                
+                // Ajouter les options en fonction du service
+                if (this.value === 'emotionnel') {
+                    // Pour la désensibilisation émotionnelle (1h30), on propose moins de créneaux
+                    const slots = ['08:00', '10:00', '14:00', '16:00', '18:00'];
+                    slots.forEach(slot => {
+                        const option = document.createElement('option');
+                        option.value = slot;
+                        option.textContent = slot;
+                        timeInput.appendChild(option);
+                    });
+                } else {
+                    // Pour les autres soins (1h)
+                    const slots = ['08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+                    slots.forEach(slot => {
+                        const option = document.createElement('option');
+                        option.value = slot;
+                        option.textContent = slot;
+                        timeInput.appendChild(option);
+                    });
+                }
